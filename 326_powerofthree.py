@@ -8,8 +8,3 @@ def powerofthree(n):
         n = n // 3
     
     return True
-    
-
-
-print(powerofthree(27)) # True
-
