@@ -1,8 +1,10 @@
 def maxProfit(prices):
-    cheapest = prices[0] # First price is always the cheapest so far
+    cheapest = float('inf')
     maxProfit = 0
 
     for price in prices:
-        if price < cheapest:
-            cheapest = price
-        
+        cheapest = min(cheapest, price)
+        if price - cheapest > maxProfit:
+            maxProfit = price - cheapest
+    
+    return maxProfit
