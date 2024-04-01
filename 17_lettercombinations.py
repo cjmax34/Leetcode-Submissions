@@ -1,5 +1,9 @@
 def letterCombinations(digits):
     res = []
+
+    if len(digits) == 0:
+        return res
+        
     keyboard = {
         '2': 'abc',
         '3': 'def',
