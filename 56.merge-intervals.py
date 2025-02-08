@@ -4,12 +4,9 @@ class Solution:
         intervals.sort()
 
         for nums in intervals:
-            if len(ans) == 0:
+            if len(ans) == 0 or nums[0] > ans[-1][1]:
                 ans.append(nums)
             else:
-                if nums[0] <= ans[-1][1]:
-                    ans[-1][1] = max(nums[1], ans[-1][1])
-                else:
-                    ans.append(nums)
+                ans[-1][1] = max(nums[1], ans[-1][1])
 
         return ans
