@@ -1,9 +1,11 @@
-def twoSum(nums, target):
-    hash_tbl = {}
-    for i in range(len(nums)):
-        complement = target - nums[i]
-        if complement in hash_tbl:
-            return [hash_tbl[complement], i]
-        hash_tbl[nums[i]] = i
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hash_set = {}
 
-    return []
+        for i in range(len(nums)):
+            comp = target - nums[i]
+            if comp in hash_set:
+                return [hash_set[comp], i]
+            hash_set[nums[i]] = i
+
+        return []
