@@ -4,7 +4,7 @@ class Solution:
         n = len(nums)
         nums.sort()
 
-        for i in range(n-1):
+        for i in range(n):
             x = nums[i] * -1
             j, k = i+1, n-1
 
