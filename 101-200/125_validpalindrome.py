@@ -1,7 +1,22 @@
-def isPalindrome(s):
-    s = s.replace(' ', '')
-    s = ''.join(filter(str.isalnum, s)).lower()
-    
-    return s == s[::-1]
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        left, right = 0, len(s)-1
 
-print(isPalindrome("race car"))
+        s = s.lower()
+
+        while left <= right:
+            if not s[left].isalnum():
+                left += 1
+                continue
+
+            if not s[right].isalnum():
+                right -= 1
+                continue
+
+            if s[left] == s[right]:
+                left += 1
+                right -= 1
+            else:
+                return False
+
+        return True
