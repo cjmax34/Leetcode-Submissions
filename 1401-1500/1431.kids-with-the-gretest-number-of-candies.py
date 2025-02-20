@@ -8,5 +8,3 @@ def kidsWithCandies(candies, extraCandies):
             res.append(False)
 
     return res
-
-print(kidsWithCandies([2,3,5,1,3], 3))

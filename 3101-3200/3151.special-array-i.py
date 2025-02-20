@@ -7,5 +7,3 @@ def isArraySpecial(nums):
             return False
 
     return True
-
-print(isArraySpecial([2,1,4]))
