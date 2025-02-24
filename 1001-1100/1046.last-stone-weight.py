@@ -9,14 +9,10 @@ class Solution:
         heapq.heapify(stones) # Create max heap
 
         while len(stones) > 1:
-            y = abs(heapq.heappop(stones))
-            x = abs(heapq.heappop(stones))
+            y = heapq.heappop(stones)
+            x = heapq.heappop(stones)
 
-            if
-            res = -(y-x)
-            heapq.heappush(stones, res)
+            if y != x:
+                heapq.heappush(stones, y-x)
 
-        if len(stones) == 0:
-            return 0
-
-        return abs(stones[0])
+        return -stones[0] if stones else 0
