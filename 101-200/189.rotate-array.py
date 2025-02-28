@@ -3,15 +3,15 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        res = [0] * len(nums)
-        n = len(nums)
-        k = k % n
+        def reverse(left, right):
+            while left < right:
+                nums[left], nums[right] = nums[right], nums[left]
+                left += 1
+                right -= 1
         
-        for i in range(k):
-            res[i] = nums[n-k+i]
+        n = len(nums)
+        k = k % n       # Get modulo especially when k >> n
 
-        for i in range(k, n):
-            res[i] = nums[i-k]
-
-        for i in range(n):
-            nums[i] = res[i]
+        reverse(0, n-1) # Reverse whole list first
+        reverse(0, k-1) # Reverse first k elements
+        reverse(k, n-1) # Reverse last n-k elements
